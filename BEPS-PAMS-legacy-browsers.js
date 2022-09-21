@@ -21,23 +21,29 @@ function make_slide(name, pos = [0, 0], size = SLIDE_SIZE) {
     return make_img(name, `${SLIDES_DIR}/${name}.png`, pos, size, 1);
 }
 
-function make_rect(name, pos, size, opacity, fillColor = null, lineColor = "green", lineWidth = 3) {
-    return new visual.Rect({"win": psychoJS.window, "name": name, "width": size[0], "height": size[1], "pos": pos, "lineWidth": lineWidth, "lineColor": new util.Color(lineColor), "fillColor": fillColor, "opacity": opacity});
+var fillColor;
+var lineColor;
+function make_rect(name, pos, size, opacity, lineColor, lineWidth = 3, fillColor = null) {
+    if ((fillColor !== null)) {
+        fillColor = new util.Color(fillColor);
+    }
+    if ((lineColor !== null)) {
+        lineColor = new util.Color(lineColor);
+    }
+    return new visual.Rect({"win": psychoJS.window, "name": name, "width": size[0], "height": size[1], "pos": pos, "lineWidth": lineWidth, "lineColor": lineColor, "fillColor": fillColor, "opacity": opacity});
 }
 
 var cimgs;
-function make_boxes(names, xys, sizes, opacity = CLICK_BOX_OPACITY) {
+function make_boxes(names, xys, sizes, opacity = CLICK_BOX_OPACITY, lineColor = "green") {
     var cimgs;
     cimgs = [];
     for (var i, _pj_c = 0, _pj_a = util.range(names.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
         i = _pj_a[_pj_c];
-        cimgs.push(make_rect(names[i], xys[i], sizes[i], opacity));
+        cimgs.push(make_rect(names[i], xys[i], sizes[i], opacity, lineColor));
     }
     return cimgs;
 }
 
-var lineColor;
-var fillColor;
 function make_circle(name, pos, size, fillColor = "black", lineColor = "black", lineWidth = 3, opacity = 1) {
     if ((lineColor !== null)) {
         lineColor = new util.Color(lineColor);
@@ -122,53 +128,53 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
-    {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
-    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
-    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
-    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
-    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
-    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
-    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
-    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
-    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
-    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
-    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
-    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
-    {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
-    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
-    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
-    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
-    {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
-    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
-    {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
-    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
-    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
+    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
+    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
     {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
     {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
-    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
-    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
-    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
-    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
+    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
     {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
-    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
     {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
-    {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
     {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
-    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
-    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
-    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
-    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
+    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
+    {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
+    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
+    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
+    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
+    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
+    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
     {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
-    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
     {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
-    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
     {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
-    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'}
+    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
+    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
+    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
+    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
+    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
+    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
+    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
+    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
+    {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
+    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
+    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
+    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
+    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
+    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
+    {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
+    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
+    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
+    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
+    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
+    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
   ]
 });
 
@@ -215,6 +221,11 @@ var SOUND;
 var previous_wrong;
 var all_cimgs;
 var trialClock;
+var run_anim;
+var aimgs;
+var starts;
+var ends;
+var all_anims;
 var trial_text;
 var globalClock;
 var routineTimer;
@@ -442,6 +453,48 @@ async function experimentInit() {
   
   // Initialize components for Routine "trial"
   trialClock = new util.Clock();
+  run_anim = false;
+  aimgs = null;
+  starts = null;
+  ends = null;
+  function anim_beps_q04() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_pattern", "box_options"];
+      xys = [[0, 0.15], [0, (- 0.22)]];
+      sizes = [[0.8, 0.2], [0.9, 0.25]];
+      start_times = [2, 5];
+      end_times = [4, 7];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  function anim_pams_q10() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_long_pencil"];
+      xys = [[(- 0.022), 0.16]];
+      sizes = [[0.85, 0.23]];
+      start_times = [2];
+      end_times = [8];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  function anim_pams_q11() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_chicken"];
+      xys = [[(- 0.215), 0.005]];
+      sizes = [[0.23, 0.18]];
+      start_times = [6.5];
+      end_times = [9.7];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  function anim_pams_q12() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_cows"];
+      xys = [[0, 0.125]];
+      sizes = [[0.67, 0.41]];
+      start_times = [1.9];
+      end_times = [4.2];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  all_anims = {"BEPS Q04": anim_beps_q04, "PAMS Q10": anim_pams_q10, "PAMS Q11": anim_pams_q11, "PAMS Q12": anim_pams_q12};
+  
   trial_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'trial_text',
@@ -450,7 +503,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
     color: new util.Color('black'),  opacity: undefined,
-    depth: -1.0 
+    depth: -2.0 
   });
   
   // Create some handy timers
@@ -589,6 +642,8 @@ var radio1s;
 var aud_file;
 var SOUND_DUR;
 var SOUND_START;
+var _pj;
+var key;
 var trialComponents;
 function trialRoutineBegin(snapshot) {
   return async function () {
@@ -608,7 +663,7 @@ function trialRoutineBegin(snapshot) {
     RESPONSE_TIME = null;
     slide_num = slideNum;
     qn_num = qnNum;
-    if (((qn_num === "Q04a") && (! previous_wrong))) {
+    if ((((taskName === "BEPS") && (qn_num === "Q04a")) && (! previous_wrong))) {
         previous_wrong = false;
         continueRoutine = false;
     }
@@ -632,7 +687,7 @@ function trialRoutineBegin(snapshot) {
         radio0s[i].autoDraw = true;
     }
     if (USE_AUDIO) {
-        if ((qn_num === "Q01")) {
+        if (((taskName === "BEPS") && (qn_num === "Q01"))) {
             aud_file = `${AUD_DIR}/BEPS Instructions.m4a`;
         } else {
             aud_file = `${AUD_DIR}/${taskName} ${qn_num}.m4a`;
@@ -648,6 +703,30 @@ function trialRoutineBegin(snapshot) {
             i = _pj_a[_pj_c];
             cimg_names.push(cimgs[i].name);
         }
+    }
+    
+    var _pj;
+    function _pj_snippets(container) {
+        function in_es6(left, right) {
+            if (((right instanceof Array) || ((typeof right) === "string"))) {
+                return (right.indexOf(left) > (- 1));
+            } else {
+                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                    return right.has(left);
+                } else {
+                    return (left in right);
+                }
+            }
+        }
+        container["in_es6"] = in_es6;
+        return container;
+    }
+    _pj = {};
+    _pj_snippets(_pj);
+    key = `${taskName} ${qn_num}`;
+    if ((USE_AUDIO && _pj.in_es6(key, all_anims))) {
+        run_anim = true;
+        [aimgs, starts, ends] = all_anims[key]();
     }
     
     // keep track of which components have finished
@@ -670,7 +749,7 @@ function trialRoutineEachFrame() {
     t = trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    if ((((qn_num === "Q01") && (SOUND_START === 0)) && ((t - SOUND_DUR) > 0))) {
+    if (((((taskName === "BEPS") && (qn_num === "Q01")) && (SOUND_START === 0)) && ((t - SOUND_DUR) > 0))) {
         aud_file = `${AUD_DIR}/${taskName} ${qn_num}.m4a`;
         SOUND = make_sound("sound", aud_file);
         SOUND_DUR = SOUND.getDuration();
@@ -715,6 +794,18 @@ function trialRoutineEachFrame() {
     corrAns = ${corrAns}
     t = ${round(t, 3)}`
     ;
+    }
+    
+    if (run_anim) {
+        for (var i, _pj_c = 0, _pj_a = util.range(aimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+            i = _pj_a[_pj_c];
+            if ((t >= starts[i])) {
+                aimgs[i].autoDraw = true;
+            }
+            if ((t >= ends[i])) {
+                aimgs[i].autoDraw = false;
+            }
+        }
     }
     
     
@@ -794,13 +885,17 @@ function trialRoutineEnd() {
     psychoJS.experiment.addData("is_correct", is_correct);
     psychoJS.experiment.addData("end_timestamp", util.MonotonicClock.getDateStr());
     psychoJS.experiment.addData("total_seconds", globalClock.getTime());
-    if (((qn_num === "Q04") && (is_correct === 0))) {
+    if ((((taskName === "BEPS") && (qn_num === "Q04")) && (is_correct === 0))) {
         previous_wrong = true;
     }
     if (SHOW_DEBUG) {
         console.log(`response = ${response}`);
         console.log(`corrAns = ${corrAns}`);
         console.log(`previous_wrong = ${previous_wrong}`);
+    }
+    
+    if (run_anim) {
+        run_anim = false;
     }
     
     // the Routine "trial" was not non-slip safe, so reset the non-slip timer
@@ -847,6 +942,8 @@ async function quitPsychoJS(message, isCompleted) {
   if (psychoJS.experiment.isEntryEmpty()) {
     psychoJS.experiment.nextEntry();
   }
+  
+  
   
   
   
