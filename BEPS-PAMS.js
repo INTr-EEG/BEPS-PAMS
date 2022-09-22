@@ -13,7 +13,7 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'BEPS-PAMS';  // from the Builder filename that created this script
-let expInfo = {'ID': '', 'Audio': ['Yes', 'No'], 'Debug': ['Yes', 'No']};
+let expInfo = {'ID': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
 
 // Start code blocks for 'Before Experiment'
 
@@ -240,14 +240,14 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "begin"
   beginClock = new util.Clock();
-  expVersion = "2022.09.21";
+  expVersion = "2022.09.22";
   AUD_DIR = "resources/aud";
   IMGS_DIR = "resources/imgs";
   SLIDES_DIR = `${IMGS_DIR}/slides`;
   SEQ_FILE = "resources/seqs/conditions.csv";
   SHOW_DEBUG = (expInfo["Debug"] === "Yes");
   USE_AUDIO = (expInfo["Audio"] === "Yes");
-  CLICK_BOX_OPACITY = (SHOW_DEBUG ? 0.5 : 0);
+  CLICK_BOX_OPACITY = (SHOW_DEBUG ? 0.2 : 0);
   /*
   Slides are 1052 x 745 pixels.
   Positions and sizes of clickable areas are hard
@@ -689,6 +689,7 @@ function trialRoutineBegin(snapshot) {
     }
     for (var i, _pj_c = 0, _pj_a = util.range(cimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
         i = _pj_a[_pj_c];
+        cimgs[i].opacity = CLICK_BOX_OPACITY;
         cimgs[i].autoDraw = true;
         radio0s[i].autoDraw = true;
     }
@@ -787,6 +788,16 @@ function trialRoutineEachFrame() {
     }
     if (((RESPONSE_TIME !== null) && ((t - RESPONSE_TIME) > 0.5))) {
         continueRoutine = false;
+    }
+    if ((slide_num !== "slide-07")) {
+        for (var cimg, _pj_c = 0, _pj_a = cimgs, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+            cimg = _pj_a[_pj_c];
+            if (cimg.contains(MOUSE)) {
+                cimg.opacity = 1;
+            } else {
+                cimg.opacity = CLICK_BOX_OPACITY;
+            }
+        }
     }
     if (SHOW_DEBUG) {
         trial_text.text = `
