@@ -211,6 +211,7 @@ var SEQ_FILE;
 var SHOW_DEBUG;
 var USE_AUDIO;
 var CLICK_BOX_OPACITY;
+var BOUND_BOX_OPACITY;
 var SLIDE_H;
 var SLIDE_W;
 var SLIDE_SIZE;
@@ -232,7 +233,7 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "begin"
   beginClock = new util.Clock();
-  expVersion = "2022.09.22";
+  expVersion = "2022.09.23";
   AUD_DIR = "resources/aud";
   IMGS_DIR = "resources/imgs";
   SLIDES_DIR = `${IMGS_DIR}/slides`;
@@ -240,6 +241,7 @@ async function experimentInit() {
   SHOW_DEBUG = (expInfo["Debug"] === "Yes");
   USE_AUDIO = (expInfo["Audio"] === "Yes");
   CLICK_BOX_OPACITY = (SHOW_DEBUG ? 0.2 : 0);
+  BOUND_BOX_OPACITY = 1;
   /*
   Slides are 1052 x 745 pixels.
   Positions and sizes of clickable areas are hard
@@ -788,7 +790,7 @@ function trialRoutineEachFrame() {
         for (var cimg, _pj_c = 0, _pj_a = cimgs, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
             cimg = _pj_a[_pj_c];
             if (cimg.contains(MOUSE)) {
-                cimg.opacity = 1;
+                cimg.opacity = BOUND_BOX_OPACITY;
             } else {
                 cimg.opacity = CLICK_BOX_OPACITY;
             }
