@@ -13,7 +13,7 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'BEPS-PAMS';  // from the Builder filename that created this script
-let expInfo = {'ID': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
+let expInfo = {'ID': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes'], 'Show boxes': ['No', 'Yes']};
 
 // Start code blocks for 'Before Experiment'
 
@@ -218,6 +218,7 @@ var SLIDES_DIR;
 var SEQ_FILE;
 var SHOW_DEBUG;
 var USE_AUDIO;
+var SHOW_BOUND_BOX;
 var CLICK_BOX_OPACITY;
 var BOUND_BOX_OPACITY;
 var SLIDE_H;
@@ -241,15 +242,16 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "begin"
   beginClock = new util.Clock();
-  expVersion = "2022.09.23";
+  expVersion = "2022.09.26";
   AUD_DIR = "resources/aud";
   IMGS_DIR = "resources/imgs";
   SLIDES_DIR = `${IMGS_DIR}/slides`;
   SEQ_FILE = "resources/seqs/conditions.csv";
   SHOW_DEBUG = (expInfo["Debug"] === "Yes");
   USE_AUDIO = (expInfo["Audio"] === "Yes");
+  SHOW_BOUND_BOX = (expInfo["Show boxes"] === "Yes");
   CLICK_BOX_OPACITY = (SHOW_DEBUG ? 0.2 : 0);
-  BOUND_BOX_OPACITY = 1;
+  BOUND_BOX_OPACITY = (SHOW_BOUND_BOX ? 1 : 0);
   /*
   Slides are 1052 x 745 pixels.
   Positions and sizes of clickable areas are hard
