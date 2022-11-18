@@ -18,7 +18,7 @@ slideNum       | slide number
 qnNum          | question number
 corrAns        | correct answer
 qnText         | question text
-ID             | subject ID
+participant    | participant ID
 Audio          | enable audio
 Debug          | enable debug mode
 

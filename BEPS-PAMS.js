@@ -13,7 +13,7 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'BEPS-PAMS';  // from the Builder filename that created this script
-let expInfo = {'ID': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes'], 'Show boxes': ['No', 'Yes']};
+let expInfo = {'participant': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes'], 'Show boxes': ['No', 'Yes']};
 
 // Start code blocks for 'Before Experiment'
 
