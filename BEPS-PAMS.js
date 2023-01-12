@@ -21,6 +21,10 @@ function make_sound(name, filepath) {
     return new sound.Sound({"win": psychoJS.window, "value": filepath, "secs": (- 1), "stereo": true, "hamming": true, "name": name});
 }
 
+function make_button(name, text, pos, size) {
+    return new visual.ButtonStim({"win": psychoJS.window, "text": text, "pos": pos, "letterHeight": 0.05, "size": size, "borderWidth": 0.005, "fillColor": "lightgrey", "borderColor": "darkgrey", "color": "black", "colorSpace": "rgb", "opacity": null, "bold": true, "italic": false, "padding": null, "anchor": "center", "name": name});
+}
+
 function make_img(name, file_name, pos, size, opacity) {
     return new visual.ImageStim({"win": psychoJS.window, "name": name, "image": file_name, "pos": pos, "size": size, "opacity": opacity});
 }
@@ -136,53 +140,53 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
-    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
     {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
-    {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
-    {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
-    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
-    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
-    {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
-    {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
-    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
-    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
     {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
+    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
+    {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
     {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
-    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
+    {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
+    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
+    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
+    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
+    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
+    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
+    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
     {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
-    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
+    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
+    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
+    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
     {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
+    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
+    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
+    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
+    {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
+    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
+    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
+    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
+    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
+    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
+    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
     {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
     {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
-    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
-    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
-    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
-    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
-    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
-    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
-    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
     {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
-    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
-    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
-    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
-    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
-    {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
-    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
-    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
-    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
-    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
-    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
     {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
+    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
+    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
     {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
-    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
-    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
-    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
-    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
+    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
+    {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
+    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'}
   ]
 });
 
@@ -224,6 +228,16 @@ var BOUND_BOX_OPACITY;
 var SLIDE_H;
 var SLIDE_W;
 var SLIDE_SIZE;
+var NEXT_POS;
+var NEXT_SIZE;
+var NEXT;
+var REPLAY_POS;
+var REPLAY_SIZE;
+var REPLAY;
+var COVER_SIZE;
+var COVER;
+var REPLAY_IN_SLIDES;
+var NEXT_IN_SLIDES;
 var MOUSE;
 var MOUSE_L;
 var MOUSE_L_prev;
@@ -260,6 +274,16 @@ async function experimentInit() {
   SLIDE_H = 0.7;
   SLIDE_W = ((SLIDE_H / 745) * 1052);
   SLIDE_SIZE = [SLIDE_W, SLIDE_H];
+  NEXT_POS = [0.55, 0.315];
+  NEXT_SIZE = [0.27, 0.055];
+  NEXT = make_button("next", "  Next", NEXT_POS, NEXT_SIZE);
+  REPLAY_POS = [(- 0.596), 0.315];
+  REPLAY_SIZE = [0.27, 0.055];
+  REPLAY = make_button("replay", "Replay", REPLAY_POS, REPLAY_SIZE);
+  COVER_SIZE = [0.252, 0.152];
+  COVER = make_rect("cover", NEXT_POS, COVER_SIZE, 1, "white", "white", 0, "white");
+  REPLAY_IN_SLIDES = ["slide-18", "slide-19", "slide-20", "slide-22"];
+  NEXT_IN_SLIDES = ["slide-21", "slide-23"];
   MOUSE = new core.Mouse({"win": psychoJS.window});
   MOUSE_L = 0;
   MOUSE_L_prev = 0;
@@ -759,6 +783,42 @@ function trialRoutineEachFrame() {
     t = trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    var _pj;
+    function _pj_snippets(container) {
+        function in_es6(left, right) {
+            if (((right instanceof Array) || ((typeof right) === "string"))) {
+                return (right.indexOf(left) > (- 1));
+            } else {
+                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                    return right.has(left);
+                } else {
+                    return (left in right);
+                }
+            }
+        }
+        container["in_es6"] = in_es6;
+        return container;
+    }
+    _pj = {};
+    _pj_snippets(_pj);
+    if (_pj.in_es6(slide_num, REPLAY_IN_SLIDES)) {
+        if (((t - SOUND_START) >= ((SOUND_DUR / 10) * 9))) {
+            REPLAY.autoDraw = true;
+        } else {
+            REPLAY.autoDraw = false;
+        }
+    } else {
+        REPLAY.autoDraw = false;
+    }
+    if (_pj.in_es6(slide_num, NEXT_IN_SLIDES)) {
+        if (has_responded) {
+            NEXT.autoDraw = true;
+        } else {
+            NEXT.autoDraw = false;
+        }
+    } else {
+        NEXT.autoDraw = false;
+    }
     if (((((taskName === "BEPS") && (qn_num === "Q01")) && (SOUND_START === 0)) && ((t - SOUND_DUR) > 0))) {
         aud_file = `${AUD_DIR}/${taskName} ${qn_num}.m4a`;
         SOUND = make_sound("sound", aud_file);
@@ -771,6 +831,17 @@ function trialRoutineEachFrame() {
         console.log(`MOUSE_L_prev = ${MOUSE_L_prev}; MOUSE_L = ${MOUSE_L}`);
         MOUSE_L_prev = MOUSE_L;
         if (MOUSE_L) {
+            if ((has_responded && NEXT.contains(MOUSE))) {
+                continueRoutine = false;
+            }
+            if ((REPLAY.autoDraw && REPLAY.contains(MOUSE))) {
+                if (((t - SOUND_START) < SOUND_DUR)) {
+                    SOUND.stop();
+                }
+                SOUND = make_sound("sound", aud_file);
+                SOUND_START = t;
+                SOUND.play();
+            }
             for (var i, _pj_c = 0, _pj_a = util.range(cimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
                 i = _pj_a[_pj_c];
                 if ((cimgs[i].contains(MOUSE) || radio0s[i].contains(MOUSE))) {
@@ -791,7 +862,9 @@ function trialRoutineEachFrame() {
         }
     }
     if (((RESPONSE_TIME !== null) && ((t - RESPONSE_TIME) > 0.5))) {
-        continueRoutine = false;
+        if ((! _pj.in_es6(slide_num, NEXT_IN_SLIDES))) {
+            continueRoutine = false;
+        }
     }
     if ((slide_num !== "slide-07")) {
         for (var cimg, _pj_c = 0, _pj_a = cimgs, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
@@ -874,6 +947,8 @@ function trialRoutineEnd() {
         thisComponent.setAutoDraw(false);
       }
     }
+    REPLAY.autoDraw = false;
+    NEXT.autoDraw = false;
     if (USE_AUDIO) {
         SOUND.stop();
     }
