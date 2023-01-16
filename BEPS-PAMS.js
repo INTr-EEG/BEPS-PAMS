@@ -262,16 +262,17 @@ var NEXT_R_POS;
 var NEXT_R_SIZE;
 var NEXT_R;
 var b_intro_text;
-var trialClock;
+var beps_trialClock;
 var run_anim;
 var aimgs;
 var starts;
 var ends;
-var all_anims;
+var beps_anims;
 var trial_text;
 var pams_introClock;
 var p_intro_text;
-var PAMS_trialClock;
+var pams_trialClock;
+var pams_anims;
 var pams_text;
 var globalClock;
 var routineTimer;
@@ -528,8 +529,8 @@ async function experimentInit() {
     depth: -1.0 
   });
   
-  // Initialize components for Routine "trial"
-  trialClock = new util.Clock();
+  // Initialize components for Routine "beps_trial"
+  beps_trialClock = new util.Clock();
   run_anim = false;
   aimgs = null;
   starts = null;
@@ -543,34 +544,7 @@ async function experimentInit() {
       end_times = [4, 7];
       return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
   }
-  function anim_pams_q10() {
-      var end_times, names, sizes, start_times, xys;
-      names = ["box_long_pencil"];
-      xys = [[(- 0.022), 0.16]];
-      sizes = [[0.85, 0.23]];
-      start_times = [2];
-      end_times = [8];
-      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
-  }
-  function anim_pams_q11() {
-      var end_times, names, sizes, start_times, xys;
-      names = ["box_chicken"];
-      xys = [[(- 0.215), 0.005]];
-      sizes = [[0.23, 0.18]];
-      start_times = [6.5];
-      end_times = [9.7];
-      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
-  }
-  function anim_pams_q12() {
-      var end_times, names, sizes, start_times, xys;
-      names = ["box_cows"];
-      xys = [[0, 0.125]];
-      sizes = [[0.67, 0.41]];
-      start_times = [1.9];
-      end_times = [4.2];
-      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
-  }
-  all_anims = {"BEPS Q04": anim_beps_q04, "PAMS Q10": anim_pams_q10, "PAMS Q11": anim_pams_q11, "PAMS Q12": anim_pams_q12};
+  beps_anims = {"BEPS Q04": anim_beps_q04};
   
   trial_text = new visual.TextStim({
     win: psychoJS.window,
@@ -598,21 +572,12 @@ async function experimentInit() {
     depth: -1.0 
   });
   
-  // Initialize components for Routine "PAMS_trial"
-  PAMS_trialClock = new util.Clock();
+  // Initialize components for Routine "pams_trial"
+  pams_trialClock = new util.Clock();
   run_anim = false;
   aimgs = null;
   starts = null;
   ends = null;
-  function anim_beps_q04() {
-      var end_times, names, sizes, start_times, xys;
-      names = ["box_pattern", "box_options"];
-      xys = [[0, 0.15], [0, (- 0.22)]];
-      sizes = [[0.8, 0.2], [0.9, 0.25]];
-      start_times = [2, 5];
-      end_times = [4, 7];
-      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
-  }
   function anim_pams_q10() {
       var end_times, names, sizes, start_times, xys;
       names = ["box_long_pencil"];
@@ -640,7 +605,7 @@ async function experimentInit() {
       end_times = [4.2];
       return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
   }
-  all_anims = {"BEPS Q04": anim_beps_q04, "PAMS Q10": anim_pams_q10, "PAMS Q11": anim_pams_q11, "PAMS Q12": anim_pams_q12};
+  pams_anims = {"PAMS Q10": anim_pams_q10, "PAMS Q11": anim_pams_q11, "PAMS Q12": anim_pams_q12};
   
   pams_text = new visual.TextStim({
     win: psychoJS.window,
@@ -874,9 +839,9 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
     for (const thisTrial of trials) {
       const snapshot = trials.getSnapshot();
       trialsLoopScheduler.add(importConditions(snapshot));
-      trialsLoopScheduler.add(trialRoutineBegin(snapshot));
-      trialsLoopScheduler.add(trialRoutineEachFrame());
-      trialsLoopScheduler.add(trialRoutineEnd());
+      trialsLoopScheduler.add(beps_trialRoutineBegin(snapshot));
+      trialsLoopScheduler.add(beps_trialRoutineEachFrame());
+      trialsLoopScheduler.add(beps_trialRoutineEnd());
       trialsLoopScheduler.add(endLoopIteration(trialsLoopScheduler, snapshot));
     }
     
@@ -912,9 +877,9 @@ function pams_trialsLoopBegin(pams_trialsLoopScheduler, snapshot) {
     for (const thisPams_trial of pams_trials) {
       const snapshot = pams_trials.getSnapshot();
       pams_trialsLoopScheduler.add(importConditions(snapshot));
-      pams_trialsLoopScheduler.add(PAMS_trialRoutineBegin(snapshot));
-      pams_trialsLoopScheduler.add(PAMS_trialRoutineEachFrame());
-      pams_trialsLoopScheduler.add(PAMS_trialRoutineEnd());
+      pams_trialsLoopScheduler.add(pams_trialRoutineBegin(snapshot));
+      pams_trialsLoopScheduler.add(pams_trialRoutineEachFrame());
+      pams_trialsLoopScheduler.add(pams_trialRoutineEnd());
       pams_trialsLoopScheduler.add(endLoopIteration(pams_trialsLoopScheduler, snapshot));
     }
     
@@ -940,14 +905,14 @@ var radio0s;
 var radio1s;
 var _pj;
 var key;
-var trialComponents;
-function trialRoutineBegin(snapshot) {
+var beps_trialComponents;
+function beps_trialRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'trial'-------
+    //------Prepare to start Routine 'beps_trial'-------
     t = 0;
-    trialClock.reset(); // clock
+    beps_trialClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
@@ -1021,16 +986,16 @@ function trialRoutineBegin(snapshot) {
     _pj = {};
     _pj_snippets(_pj);
     key = `${taskName} ${qn_num}`;
-    if ((USE_AUDIO && _pj.in_es6(key, all_anims))) {
+    if ((USE_AUDIO && _pj.in_es6(key, beps_anims))) {
         run_anim = true;
-        [aimgs, starts, ends] = all_anims[key]();
+        [aimgs, starts, ends] = beps_anims[key]();
     }
     
     // keep track of which components have finished
-    trialComponents = [];
-    trialComponents.push(trial_text);
+    beps_trialComponents = [];
+    beps_trialComponents.push(trial_text);
     
-    for (const thisComponent of trialComponents)
+    for (const thisComponent of beps_trialComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
     return Scheduler.Event.NEXT;
@@ -1038,11 +1003,11 @@ function trialRoutineBegin(snapshot) {
 }
 
 
-function trialRoutineEachFrame() {
+function beps_trialRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'trial'-------
+    //------Loop for each frame of Routine 'beps_trial'-------
     // get current time
-    t = trialClock.getTime();
+    t = beps_trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     var _pj;
@@ -1184,7 +1149,7 @@ function trialRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of trialComponents)
+    for (const thisComponent of beps_trialComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
         break;
@@ -1201,10 +1166,10 @@ function trialRoutineEachFrame() {
 
 
 var is_correct;
-function trialRoutineEnd() {
+function beps_trialRoutineEnd() {
   return async function () {
-    //------Ending Routine 'trial'-------
-    for (const thisComponent of trialComponents) {
+    //------Ending Routine 'beps_trial'-------
+    for (const thisComponent of beps_trialComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
@@ -1255,7 +1220,7 @@ function trialRoutineEnd() {
         run_anim = false;
     }
     
-    // the Routine "trial" was not non-slip safe, so reset the non-slip timer
+    // the Routine "beps_trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
     return Scheduler.Event.NEXT;
@@ -1361,14 +1326,14 @@ function pams_introRoutineEnd() {
 }
 
 
-var PAMS_trialComponents;
-function PAMS_trialRoutineBegin(snapshot) {
+var pams_trialComponents;
+function pams_trialRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'PAMS_trial'-------
+    //------Prepare to start Routine 'pams_trial'-------
     t = 0;
-    PAMS_trialClock.reset(); // clock
+    pams_trialClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
@@ -1442,16 +1407,16 @@ function PAMS_trialRoutineBegin(snapshot) {
     _pj = {};
     _pj_snippets(_pj);
     key = `${taskName} ${qn_num}`;
-    if ((USE_AUDIO && _pj.in_es6(key, all_anims))) {
+    if ((USE_AUDIO && _pj.in_es6(key, pams_anims))) {
         run_anim = true;
-        [aimgs, starts, ends] = all_anims[key]();
+        [aimgs, starts, ends] = pams_anims[key]();
     }
     
     // keep track of which components have finished
-    PAMS_trialComponents = [];
-    PAMS_trialComponents.push(pams_text);
+    pams_trialComponents = [];
+    pams_trialComponents.push(pams_text);
     
-    for (const thisComponent of PAMS_trialComponents)
+    for (const thisComponent of pams_trialComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
     return Scheduler.Event.NEXT;
@@ -1459,11 +1424,11 @@ function PAMS_trialRoutineBegin(snapshot) {
 }
 
 
-function PAMS_trialRoutineEachFrame() {
+function pams_trialRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'PAMS_trial'-------
+    //------Loop for each frame of Routine 'pams_trial'-------
     // get current time
-    t = PAMS_trialClock.getTime();
+    t = pams_trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     var _pj;
@@ -1605,7 +1570,7 @@ function PAMS_trialRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of PAMS_trialComponents)
+    for (const thisComponent of pams_trialComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
         break;
@@ -1621,10 +1586,10 @@ function PAMS_trialRoutineEachFrame() {
 }
 
 
-function PAMS_trialRoutineEnd() {
+function pams_trialRoutineEnd() {
   return async function () {
-    //------Ending Routine 'PAMS_trial'-------
-    for (const thisComponent of PAMS_trialComponents) {
+    //------Ending Routine 'pams_trial'-------
+    for (const thisComponent of pams_trialComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
@@ -1675,7 +1640,7 @@ function PAMS_trialRoutineEnd() {
         run_anim = false;
     }
     
-    // the Routine "PAMS_trial" was not non-slip safe, so reset the non-slip timer
+    // the Routine "pams_trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
     return Scheduler.Event.NEXT;
