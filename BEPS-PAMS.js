@@ -127,10 +127,20 @@ flowScheduler.add(experimentInit);
 flowScheduler.add(beginRoutineBegin());
 flowScheduler.add(beginRoutineEachFrame());
 flowScheduler.add(beginRoutineEnd());
+flowScheduler.add(beps_introRoutineBegin());
+flowScheduler.add(beps_introRoutineEachFrame());
+flowScheduler.add(beps_introRoutineEnd());
 const trialsLoopScheduler = new Scheduler(psychoJS);
 flowScheduler.add(trialsLoopBegin(trialsLoopScheduler));
 flowScheduler.add(trialsLoopScheduler);
 flowScheduler.add(trialsLoopEnd);
+flowScheduler.add(pams_introRoutineBegin());
+flowScheduler.add(pams_introRoutineEachFrame());
+flowScheduler.add(pams_introRoutineEnd());
+const pams_trialsLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(pams_trialsLoopBegin(pams_trialsLoopScheduler));
+flowScheduler.add(pams_trialsLoopScheduler);
+flowScheduler.add(pams_trialsLoopEnd);
 flowScheduler.add(quitPsychoJS, '', true);
 
 // quit if user presses Cancel in dialog box:
@@ -140,53 +150,56 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
-    {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
-    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
-    {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
-    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
-    {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
-    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
-    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
-    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
-    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
-    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
-    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
-    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
-    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
-    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
-    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
-    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
-    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
     {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
-    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
-    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
-    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
-    {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
-    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
-    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
     {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
-    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
-    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
-    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
-    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
-    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
-    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
-    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
-    {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
-    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
+    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
+    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
+    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
     {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
-    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
-    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
-    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
-    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
-    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
     {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
-    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'}
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
+    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
+    {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
+    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
+    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
+    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
+    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
+    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
+    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
+    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
+    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
+    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
+    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
+    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
+    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
+    {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
+    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
+    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
+    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
+    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
+    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
+    {'name': 'resources/imgs/slides/beps-intro.png', 'path': 'resources/imgs/slides/beps-intro.png'},
+    {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
+    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
+    {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
+    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
+    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/aud/BEPS-PAMS Intro.m4a', 'path': 'resources/aud/BEPS-PAMS Intro.m4a'},
+    {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
+    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
+    {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
+    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
+    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
+    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
+    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/imgs/slides/pams-intro.png', 'path': 'resources/imgs/slides/pams-intro.png'}
   ]
 });
 
@@ -244,6 +257,11 @@ var MOUSE_L_prev;
 var SOUND;
 var previous_wrong;
 var all_cimgs;
+var beps_introClock;
+var NEXT_R_POS;
+var NEXT_R_SIZE;
+var NEXT_R;
+var b_intro_text;
 var trialClock;
 var run_anim;
 var aimgs;
@@ -251,6 +269,10 @@ var starts;
 var ends;
 var all_anims;
 var trial_text;
+var pams_introClock;
+var p_intro_text;
+var PAMS_trialClock;
+var pams_text;
 var globalClock;
 var routineTimer;
 async function experimentInit() {
@@ -487,6 +509,25 @@ async function experimentInit() {
       return make_boxes(names, xys, sizes);
   }
   
+  // Initialize components for Routine "beps_intro"
+  beps_introClock = new util.Clock();
+  NEXT_R_POS = [0.4, 0.285];
+  NEXT_R_SIZE = [0.165, 0.075];
+  NEXT_R = make_rect("next", NEXT_R_POS, NEXT_R_SIZE, CLICK_BOX_OPACITY);
+  COVER_SIZE = [0.17, 0.08];
+  COVER = make_rect("cover", NEXT_R_POS, COVER_SIZE, null, "white", 0, "white");
+  
+  b_intro_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'b_intro_text',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -1.0 
+  });
+  
   // Initialize components for Routine "trial"
   trialClock = new util.Clock();
   run_anim = false;
@@ -534,6 +575,76 @@ async function experimentInit() {
   trial_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'trial_text',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    color: new util.Color('black'),  opacity: undefined,
+    depth: -2.0 
+  });
+  
+  // Initialize components for Routine "pams_intro"
+  pams_introClock = new util.Clock();
+  NEXT_R = make_rect("next", NEXT_R_POS, NEXT_R_SIZE, CLICK_BOX_OPACITY);
+  
+  p_intro_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'p_intro_text',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -1.0 
+  });
+  
+  // Initialize components for Routine "PAMS_trial"
+  PAMS_trialClock = new util.Clock();
+  run_anim = false;
+  aimgs = null;
+  starts = null;
+  ends = null;
+  function anim_beps_q04() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_pattern", "box_options"];
+      xys = [[0, 0.15], [0, (- 0.22)]];
+      sizes = [[0.8, 0.2], [0.9, 0.25]];
+      start_times = [2, 5];
+      end_times = [4, 7];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  function anim_pams_q10() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_long_pencil"];
+      xys = [[(- 0.022), 0.16]];
+      sizes = [[0.85, 0.23]];
+      start_times = [2];
+      end_times = [8];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  function anim_pams_q11() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_chicken"];
+      xys = [[(- 0.215), 0.005]];
+      sizes = [[0.23, 0.18]];
+      start_times = [6.5];
+      end_times = [9.7];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  function anim_pams_q12() {
+      var end_times, names, sizes, start_times, xys;
+      names = ["box_cows"];
+      xys = [[0, 0.125]];
+      sizes = [[0.67, 0.41]];
+      start_times = [1.9];
+      end_times = [4.2];
+      return [make_boxes(names, xys, sizes, 1, "red"), start_times, end_times];
+  }
+  all_anims = {"BEPS Q04": anim_beps_q04, "PAMS Q10": anim_pams_q10, "PAMS Q11": anim_pams_q11, "PAMS Q12": anim_pams_q12};
+  
+  pams_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'pams_text',
     text: '',
     font: 'Open Sans',
     units: undefined, 
@@ -625,6 +736,123 @@ function beginRoutineEnd() {
 }
 
 
+var slide;
+var aud_file;
+var SOUND_DUR;
+var SOUND_START;
+var beps_introComponents;
+function beps_introRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //------Prepare to start Routine 'beps_intro'-------
+    t = 0;
+    beps_introClock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // update component parameters for each repeat
+    slide = make_slide(`beps-intro`);
+    slide.autoDraw = true;
+    NEXT_R.autoDraw = true;
+    COVER.autoDraw = true;
+    if (USE_AUDIO) {
+        aud_file = `${AUD_DIR}/BEPS-PAMS Intro.m4a`;
+        SOUND = make_sound("BEPS-PAMS Intro", aud_file);
+        SOUND_DUR = SOUND.getDuration();
+        SOUND_START = t;
+        SOUND.play();
+    }
+    
+    // keep track of which components have finished
+    beps_introComponents = [];
+    beps_introComponents.push(b_intro_text);
+    
+    for (const thisComponent of beps_introComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function beps_introRoutineEachFrame() {
+  return async function () {
+    //------Loop for each frame of Routine 'beps_intro'-------
+    // get current time
+    t = beps_introClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    MOUSE_L = MOUSE.getPressed()[0];
+    if ((MOUSE_L_prev !== MOUSE_L)) {
+        MOUSE_L_prev = MOUSE_L;
+        if (((MOUSE_L === 1) && NEXT_R.contains(MOUSE))) {
+            continueRoutine = false;
+        }
+    }
+    if (((t - SOUND_START) >= ((SOUND_DUR / 10) * 9))) {
+        COVER.autoDraw = false;
+    }
+    
+    
+    // *b_intro_text* updates
+    if (t >= 0.0 && b_intro_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      b_intro_text.tStart = t;  // (not accounting for frame time here)
+      b_intro_text.frameNStart = frameN;  // exact frame index
+      
+      b_intro_text.setAutoDraw(true);
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of beps_introComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function beps_introRoutineEnd() {
+  return async function () {
+    //------Ending Routine 'beps_intro'-------
+    for (const thisComponent of beps_introComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    slide.autoDraw = false;
+    NEXT_R.autoDraw = false;
+    COVER.autoDraw = false;
+    if (USE_AUDIO) {
+        SOUND.stop();
+    }
+    
+    // the Routine "beps_intro" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+
 var trials;
 var currentLoop;
 function trialsLoopBegin(trialsLoopScheduler, snapshot) {
@@ -636,7 +864,7 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: TrialHandler.importConditions(psychoJS.serverManager, SEQ_FILE, '0:'),
+      trialList: TrialHandler.importConditions(psychoJS.serverManager, SEQ_FILE, '0:9'),
       seed: undefined, name: 'trials'
     });
     psychoJS.experiment.addLoop(trials); // add the loop to the experiment
@@ -664,18 +892,52 @@ async function trialsLoopEnd() {
 }
 
 
+var pams_trials;
+function pams_trialsLoopBegin(pams_trialsLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    pams_trials = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: TrialHandler.importConditions(psychoJS.serverManager, SEQ_FILE, '9:25'),
+      seed: undefined, name: 'pams_trials'
+    });
+    psychoJS.experiment.addLoop(pams_trials); // add the loop to the experiment
+    currentLoop = pams_trials;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    for (const thisPams_trial of pams_trials) {
+      const snapshot = pams_trials.getSnapshot();
+      pams_trialsLoopScheduler.add(importConditions(snapshot));
+      pams_trialsLoopScheduler.add(PAMS_trialRoutineBegin(snapshot));
+      pams_trialsLoopScheduler.add(PAMS_trialRoutineEachFrame());
+      pams_trialsLoopScheduler.add(PAMS_trialRoutineEnd());
+      pams_trialsLoopScheduler.add(endLoopIteration(pams_trialsLoopScheduler, snapshot));
+    }
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+async function pams_trialsLoopEnd() {
+  psychoJS.experiment.removeLoop(pams_trials);
+
+  return Scheduler.Event.NEXT;
+}
+
+
 var cimg_names;
 var response;
 var has_responded;
 var RESPONSE_TIME;
 var slide_num;
 var qn_num;
-var slide;
 var radio0s;
 var radio1s;
-var aud_file;
-var SOUND_DUR;
-var SOUND_START;
 var _pj;
 var key;
 var trialComponents;
@@ -1001,6 +1263,426 @@ function trialRoutineEnd() {
 }
 
 
+var pams_introComponents;
+function pams_introRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //------Prepare to start Routine 'pams_intro'-------
+    t = 0;
+    pams_introClock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // update component parameters for each repeat
+    slide = make_slide(`pams-intro`);
+    slide.autoDraw = true;
+    NEXT_R.autoDraw = true;
+    
+    // keep track of which components have finished
+    pams_introComponents = [];
+    pams_introComponents.push(p_intro_text);
+    
+    for (const thisComponent of pams_introComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function pams_introRoutineEachFrame() {
+  return async function () {
+    //------Loop for each frame of Routine 'pams_intro'-------
+    // get current time
+    t = pams_introClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    MOUSE_L = MOUSE.getPressed()[0];
+    if ((MOUSE_L_prev !== MOUSE_L)) {
+        MOUSE_L_prev = MOUSE_L;
+        if (((MOUSE_L === 1) && NEXT_R.contains(MOUSE))) {
+            continueRoutine = false;
+        }
+    }
+    
+    
+    // *p_intro_text* updates
+    if (t >= 0.0 && p_intro_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      p_intro_text.tStart = t;  // (not accounting for frame time here)
+      p_intro_text.frameNStart = frameN;  // exact frame index
+      
+      p_intro_text.setAutoDraw(true);
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of pams_introComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function pams_introRoutineEnd() {
+  return async function () {
+    //------Ending Routine 'pams_intro'-------
+    for (const thisComponent of pams_introComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    slide.autoDraw = false;
+    NEXT_R.autoDraw = false;
+    
+    // the Routine "pams_intro" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+
+var PAMS_trialComponents;
+function PAMS_trialRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //------Prepare to start Routine 'PAMS_trial'-------
+    t = 0;
+    PAMS_trialClock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // update component parameters for each repeat
+    psychoJS.experiment.addData("expVersion", expVersion);
+    cimgs = [];
+    cimg_names = [];
+    response = null;
+    has_responded = false;
+    RESPONSE_TIME = null;
+    slide_num = slideNum;
+    qn_num = qnNum;
+    if ((((taskName === "BEPS") && (qn_num === "Q04a")) && (! previous_wrong))) {
+        previous_wrong = false;
+        continueRoutine = false;
+    }
+    slide = make_slide(slide_num);
+    slide.autoDraw = true;
+    cimgs = all_cimgs[slide_num]();
+    radio0s = [];
+    radio1s = [];
+    if ((slide_num === "slide-02")) {
+        radio0s = make_radios(make_radio0, cimgs.slice(0, 3), radio0s);
+        radio0s = make_radios(make_radio0, cimgs.slice(3), radio0s);
+        radio1s = make_radios(make_radio1, cimgs.slice(0, 3), radio1s);
+        radio1s = make_radios(make_radio1, cimgs.slice(3), radio1s);
+    } else {
+        radio0s = make_radios(make_radio0, cimgs, radio0s);
+        radio1s = make_radios(make_radio1, cimgs, radio1s);
+    }
+    for (var i, _pj_c = 0, _pj_a = util.range(cimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        i = _pj_a[_pj_c];
+        cimgs[i].opacity = CLICK_BOX_OPACITY;
+        cimgs[i].autoDraw = true;
+        radio0s[i].autoDraw = true;
+    }
+    if (USE_AUDIO) {
+        if (((taskName === "BEPS") && (qn_num === "Q01"))) {
+            aud_file = `${AUD_DIR}/BEPS Instructions.m4a`;
+        } else {
+            aud_file = `${AUD_DIR}/${taskName} ${qn_num}.m4a`;
+        }
+        SOUND = make_sound("sound", aud_file);
+        SOUND_DUR = SOUND.getDuration();
+        SOUND_START = 0;
+        SOUND.play();
+    }
+    if (SHOW_DEBUG) {
+        cimg_names = [];
+        for (var i, _pj_c = 0, _pj_a = util.range(cimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+            i = _pj_a[_pj_c];
+            cimg_names.push(cimgs[i].name);
+        }
+    }
+    
+    var _pj;
+    function _pj_snippets(container) {
+        function in_es6(left, right) {
+            if (((right instanceof Array) || ((typeof right) === "string"))) {
+                return (right.indexOf(left) > (- 1));
+            } else {
+                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                    return right.has(left);
+                } else {
+                    return (left in right);
+                }
+            }
+        }
+        container["in_es6"] = in_es6;
+        return container;
+    }
+    _pj = {};
+    _pj_snippets(_pj);
+    key = `${taskName} ${qn_num}`;
+    if ((USE_AUDIO && _pj.in_es6(key, all_anims))) {
+        run_anim = true;
+        [aimgs, starts, ends] = all_anims[key]();
+    }
+    
+    // keep track of which components have finished
+    PAMS_trialComponents = [];
+    PAMS_trialComponents.push(pams_text);
+    
+    for (const thisComponent of PAMS_trialComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function PAMS_trialRoutineEachFrame() {
+  return async function () {
+    //------Loop for each frame of Routine 'PAMS_trial'-------
+    // get current time
+    t = PAMS_trialClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    var _pj;
+    function _pj_snippets(container) {
+        function in_es6(left, right) {
+            if (((right instanceof Array) || ((typeof right) === "string"))) {
+                return (right.indexOf(left) > (- 1));
+            } else {
+                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                    return right.has(left);
+                } else {
+                    return (left in right);
+                }
+            }
+        }
+        container["in_es6"] = in_es6;
+        return container;
+    }
+    _pj = {};
+    _pj_snippets(_pj);
+    if (_pj.in_es6(slide_num, REPLAY_IN_SLIDES)) {
+        if (((t - SOUND_START) >= ((SOUND_DUR / 10) * 9))) {
+            REPLAY.autoDraw = true;
+        } else {
+            REPLAY.autoDraw = false;
+        }
+    } else {
+        REPLAY.autoDraw = false;
+    }
+    if (_pj.in_es6(slide_num, NEXT_IN_SLIDES)) {
+        if (has_responded) {
+            NEXT.autoDraw = true;
+        } else {
+            NEXT.autoDraw = false;
+        }
+    } else {
+        NEXT.autoDraw = false;
+    }
+    if (((((taskName === "BEPS") && (qn_num === "Q01")) && (SOUND_START === 0)) && ((t - SOUND_DUR) > 0))) {
+        aud_file = `${AUD_DIR}/${taskName} ${qn_num}.m4a`;
+        SOUND = make_sound("sound", aud_file);
+        SOUND_DUR = SOUND.getDuration();
+        SOUND_START = t;
+        SOUND.play();
+    }
+    MOUSE_L = MOUSE.getPressed()[0];
+    if ((MOUSE_L_prev !== MOUSE_L)) {
+        console.log(`MOUSE_L_prev = ${MOUSE_L_prev}; MOUSE_L = ${MOUSE_L}`);
+        MOUSE_L_prev = MOUSE_L;
+        if (MOUSE_L) {
+            if ((has_responded && NEXT.contains(MOUSE))) {
+                continueRoutine = false;
+            }
+            if ((REPLAY.autoDraw && REPLAY.contains(MOUSE))) {
+                if (((t - SOUND_START) < SOUND_DUR)) {
+                    SOUND.stop();
+                }
+                SOUND = make_sound("sound", aud_file);
+                SOUND_START = t;
+                SOUND.play();
+            }
+            for (var i, _pj_c = 0, _pj_a = util.range(cimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+                i = _pj_a[_pj_c];
+                if ((cimgs[i].contains(MOUSE) || radio0s[i].contains(MOUSE))) {
+                    if ((! has_responded)) {
+                        has_responded = true;
+                    }
+                    response = cimgs[i].name;
+                    for (var radio, _pj_f = 0, _pj_d = radio1s, _pj_e = _pj_d.length; (_pj_f < _pj_e); _pj_f += 1) {
+                        radio = _pj_d[_pj_f];
+                        radio.autoDraw = false;
+                        if ((response === radio.name)) {
+                            radio.autoDraw = true;
+                        }
+                    }
+                    RESPONSE_TIME = t;
+                }
+            }
+        }
+    }
+    if (((RESPONSE_TIME !== null) && ((t - RESPONSE_TIME) > 0.5))) {
+        if ((! _pj.in_es6(slide_num, NEXT_IN_SLIDES))) {
+            continueRoutine = false;
+        }
+    }
+    if ((slide_num !== "slide-07")) {
+        for (var cimg, _pj_c = 0, _pj_a = cimgs, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+            cimg = _pj_a[_pj_c];
+            if (cimg.contains(MOUSE)) {
+                cimg.opacity = BOUND_BOX_OPACITY;
+            } else {
+                cimg.opacity = CLICK_BOX_OPACITY;
+            }
+        }
+    }
+    if (SHOW_DEBUG) {
+        trial_text.text = `
+    taskName = ${taskName}
+    aud_file = ${aud_file}
+    slide_num = ${slide_num}
+    qn_num = ${qn_num}
+    cimg_names = ${cimg_names}
+    response = ${response}
+    corrAns = ${corrAns}
+    t = ${round(t, 3)}`
+    ;
+    }
+    
+    if (run_anim) {
+        for (var i, _pj_c = 0, _pj_a = util.range(aimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+            i = _pj_a[_pj_c];
+            if ((t >= starts[i])) {
+                aimgs[i].autoDraw = true;
+            }
+            if ((t >= ends[i])) {
+                aimgs[i].autoDraw = false;
+            }
+        }
+    }
+    
+    
+    // *pams_text* updates
+    if (t >= 0.0 && pams_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      pams_text.tStart = t;  // (not accounting for frame time here)
+      pams_text.frameNStart = frameN;  // exact frame index
+      
+      pams_text.setAutoDraw(true);
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of PAMS_trialComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function PAMS_trialRoutineEnd() {
+  return async function () {
+    //------Ending Routine 'PAMS_trial'-------
+    for (const thisComponent of PAMS_trialComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    REPLAY.autoDraw = false;
+    NEXT.autoDraw = false;
+    if (USE_AUDIO) {
+        SOUND.stop();
+    }
+    for (var cimg, _pj_c = 0, _pj_a = cimgs, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        cimg = _pj_a[_pj_c];
+        cimg.size = [0, 0];
+        cimg.autoDraw = false;
+    }
+    for (var radio, _pj_c = 0, _pj_a = radio0s, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        radio = _pj_a[_pj_c];
+        radio.size = [0, 0];
+        radio.autoDraw = false;
+    }
+    for (var radio, _pj_c = 0, _pj_a = radio1s, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        radio = _pj_a[_pj_c];
+        radio.size = [0, 0];
+        radio.autoDraw = false;
+    }
+    slide.size = [0, 0];
+    slide.autoDraw = false;
+    if ((response === null)) {
+        response = "";
+    }
+    is_correct = ((response.toString() === corrAns.toString()) ? 1 : 0);
+    if ((response === "")) {
+        is_correct = "";
+    }
+    psychoJS.experiment.addData("response", response);
+    psychoJS.experiment.addData("is_correct", is_correct);
+    psychoJS.experiment.addData("end_timestamp", util.MonotonicClock.getDateStr());
+    psychoJS.experiment.addData("total_seconds", globalClock.getTime());
+    if ((((taskName === "BEPS") && (qn_num === "Q04")) && (is_correct === 0))) {
+        previous_wrong = true;
+    }
+    if (SHOW_DEBUG) {
+        console.log(`response = ${response}`);
+        console.log(`corrAns = ${corrAns}`);
+        console.log(`previous_wrong = ${previous_wrong}`);
+    }
+    
+    if (run_anim) {
+        run_anim = false;
+    }
+    
+    // the Routine "PAMS_trial" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+
 function endLoopIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
@@ -1037,6 +1719,14 @@ async function quitPsychoJS(message, isCompleted) {
   if (psychoJS.experiment.isEntryEmpty()) {
     psychoJS.experiment.nextEntry();
   }
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
