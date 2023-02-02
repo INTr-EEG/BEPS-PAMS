@@ -142,56 +142,56 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
-    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
-    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
-    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
     {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
-    {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
-    {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
-    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
-    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
-    {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
-    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
-    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
-    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
-    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
-    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
-    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
-    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
-    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
-    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
-    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
-    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
-    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
-    {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
-    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
-    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
     {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
     {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
-    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
-    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
-    {'name': 'resources/imgs/slides/beps-intro.png', 'path': 'resources/imgs/slides/beps-intro.png'},
+    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
     {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
-    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
-    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
     {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
-    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
-    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
-    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
+    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
+    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
     {'name': 'resources/aud/BEPS-PAMS Intro.m4a', 'path': 'resources/aud/BEPS-PAMS Intro.m4a'},
-    {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
+    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
+    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
+    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
+    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
+    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
+    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
+    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
+    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
+    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
+    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
+    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
     {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
     {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
-    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
-    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
     {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
     {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
-    {'name': 'resources/imgs/slides/pams-intro.png', 'path': 'resources/imgs/slides/pams-intro.png'}
+    {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
+    {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
+    {'name': 'resources/imgs/slides/pams-intro.png', 'path': 'resources/imgs/slides/pams-intro.png'},
+    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
+    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
+    {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
+    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
+    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
+    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
+    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
+    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
+    {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
+    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
+    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/imgs/slides/beps-intro.png', 'path': 'resources/imgs/slides/beps-intro.png'},
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
+    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
+    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'}
   ]
 });
 
@@ -1034,12 +1034,8 @@ function beps_trialRoutineEachFrame() {
     } else {
         REPLAY.autoDraw = false;
     }
-    if (_pj.in_es6(slide_num, NEXT_IN_SLIDES)) {
-        if (has_responded) {
-            NEXT.autoDraw = true;
-        } else {
-            NEXT.autoDraw = false;
-        }
+    if (has_responded) {
+        NEXT.autoDraw = true;
     } else {
         NEXT.autoDraw = false;
     }
@@ -1083,11 +1079,6 @@ function beps_trialRoutineEachFrame() {
                     RESPONSE_TIME = t;
                 }
             }
-        }
-    }
-    if (((RESPONSE_TIME !== null) && ((t - RESPONSE_TIME) > 0.5))) {
-        if ((! _pj.in_es6(slide_num, NEXT_IN_SLIDES))) {
-            continueRoutine = false;
         }
     }
     if ((slide_num !== "slide-07")) {
@@ -1457,12 +1448,8 @@ function pams_trialRoutineEachFrame() {
     } else {
         REPLAY.autoDraw = false;
     }
-    if (_pj.in_es6(slide_num, NEXT_IN_SLIDES)) {
-        if (has_responded) {
-            NEXT.autoDraw = true;
-        } else {
-            NEXT.autoDraw = false;
-        }
+    if (has_responded) {
+        NEXT.autoDraw = true;
     } else {
         NEXT.autoDraw = false;
     }
@@ -1506,11 +1493,6 @@ function pams_trialRoutineEachFrame() {
                     RESPONSE_TIME = t;
                 }
             }
-        }
-    }
-    if (((RESPONSE_TIME !== null) && ((t - RESPONSE_TIME) > 0.5))) {
-        if ((! _pj.in_es6(slide_num, NEXT_IN_SLIDES))) {
-            continueRoutine = false;
         }
     }
     if ((slide_num !== "slide-07")) {
