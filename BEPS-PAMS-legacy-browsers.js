@@ -5,9 +5,16 @@
 
 // store info about the experiment session:
 let expName = 'BEPS-PAMS';  // from the Builder filename that created this script
-let expInfo = {'participant': '', 'School': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes'], 'Show boxes': ['No', 'Yes']};
+let expInfo = {
+    'participant': '',
+    'School': '',
+    'Audio': ["Yes", "No"],
+    'Debug': ["No", "Yes"],
+    'Show boxes': ["No", "Yes"],
+};
 
 // Start code blocks for 'Before Experiment'
+// Run 'Before Experiment' code from functions_g
 
 function make_sound(name, filepath) {
     return new sound.Sound({"win": psychoJS.window, "value": filepath, "secs": (- 1), "stereo": true, "hamming": true, "name": name});
@@ -99,7 +106,7 @@ const psychoJS = new PsychoJS({
 // open window:
 psychoJS.openWindow({
   fullscr: true,
-  color: new util.Color([1, 1, 1]),
+  color: new util.Color([1,1,1]),
   units: 'height',
   waitBlanking: true
 });
@@ -142,68 +149,72 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
     {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
-    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
-    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
-    {'name': 'resources/imgs/slides/pams-intro.png', 'path': 'resources/imgs/slides/pams-intro.png'},
-    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
-    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
-    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
-    {'name': 'resources/aud/BEPS-PAMS Intro.m4a', 'path': 'resources/aud/BEPS-PAMS Intro.m4a'},
-    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
-    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
-    {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
-    {'name': 'resources/imgs/slides/beps-intro.png', 'path': 'resources/imgs/slides/beps-intro.png'},
-    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
-    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
-    {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
-    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
-    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
-    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'},
-    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
-    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
-    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
-    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
-    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
-    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
-    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
-    {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
-    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
-    {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
-    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
-    {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
-    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
-    {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
-    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
-    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
-    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
+    {'name': 'resources/imgs/slides/slide-12.png', 'path': 'resources/imgs/slides/slide-12.png'},
     {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
-    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
-    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/aud/PAMS Q14.m4a', 'path': 'resources/aud/PAMS Q14.m4a'},
+    {'name': 'resources/aud/BEPS Q07.m4a', 'path': 'resources/aud/BEPS Q07.m4a'},
+    {'name': 'resources/aud/BEPS-PAMS Intro.m4a', 'path': 'resources/aud/BEPS-PAMS Intro.m4a'},
+    {'name': 'resources/imgs/slides/slide-19.png', 'path': 'resources/imgs/slides/slide-19.png'},
+    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'},
+    {'name': 'resources/aud/PAMS Q01.m4a', 'path': 'resources/aud/PAMS Q01.m4a'},
+    {'name': 'resources/imgs/slides/slide-23.png', 'path': 'resources/imgs/slides/slide-23.png'},
+    {'name': 'resources/aud/BEPS Q08.m4a', 'path': 'resources/aud/BEPS Q08.m4a'},
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/aud/PAMS Q05.m4a', 'path': 'resources/aud/PAMS Q05.m4a'},
     {'name': 'resources/aud/BEPS Q06.m4a', 'path': 'resources/aud/BEPS Q06.m4a'},
-    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/aud/PAMS Q10.m4a', 'path': 'resources/aud/PAMS Q10.m4a'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/aud/BEPS Q05.m4a', 'path': 'resources/aud/BEPS Q05.m4a'},
+    {'name': 'resources/aud/PAMS Q13.m4a', 'path': 'resources/aud/PAMS Q13.m4a'},
+    {'name': 'resources/imgs/slides/slide-15.png', 'path': 'resources/imgs/slides/slide-15.png'},
     {'name': 'resources/aud/PAMS Q07.m4a', 'path': 'resources/aud/PAMS Q07.m4a'},
+    {'name': 'resources/aud/PAMS Q08.m4a', 'path': 'resources/aud/PAMS Q08.m4a'},
+    {'name': 'resources/aud/BEPS Q03.m4a', 'path': 'resources/aud/BEPS Q03.m4a'},
     {'name': 'resources/aud/BEPS Q02.m4a', 'path': 'resources/aud/BEPS Q02.m4a'},
-    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
+    {'name': 'resources/imgs/slides/slide-18.png', 'path': 'resources/imgs/slides/slide-18.png'},
+    {'name': 'resources/aud/PAMS Q09.m4a', 'path': 'resources/aud/PAMS Q09.m4a'},
+    {'name': 'resources/aud/PAMS Q11.m4a', 'path': 'resources/aud/PAMS Q11.m4a'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
     {'name': 'resources/imgs/slides/slide-13.png', 'path': 'resources/imgs/slides/slide-13.png'},
-    {'name': 'resources/aud/BEPS Q01.m4a', 'path': 'resources/aud/BEPS Q01.m4a'}
+    {'name': 'resources/imgs/slides/slide-14.png', 'path': 'resources/imgs/slides/slide-14.png'},
+    {'name': 'resources/imgs/slides/beps-intro.png', 'path': 'resources/imgs/slides/beps-intro.png'},
+    {'name': 'resources/aud/PAMS Q06.m4a', 'path': 'resources/aud/PAMS Q06.m4a'},
+    {'name': 'resources/imgs/slides/slide-20.png', 'path': 'resources/imgs/slides/slide-20.png'},
+    {'name': 'resources/imgs/slides/slide-05.png', 'path': 'resources/imgs/slides/slide-05.png'},
+    {'name': 'resources/aud/PAMS Q15.m4a', 'path': 'resources/aud/PAMS Q15.m4a'},
+    {'name': 'resources/imgs/slides/slide-22.png', 'path': 'resources/imgs/slides/slide-22.png'},
+    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/aud/PAMS Q02.m4a', 'path': 'resources/aud/PAMS Q02.m4a'},
+    {'name': 'resources/imgs/slides/pams-intro.png', 'path': 'resources/imgs/slides/pams-intro.png'},
+    {'name': 'resources/aud/PAMS Q12.m4a', 'path': 'resources/aud/PAMS Q12.m4a'},
+    {'name': 'resources/imgs/slides/slide-16.png', 'path': 'resources/imgs/slides/slide-16.png'},
+    {'name': 'resources/imgs/slides/slide-17.png', 'path': 'resources/imgs/slides/slide-17.png'},
+    {'name': 'resources/imgs/slides/slide-21.png', 'path': 'resources/imgs/slides/slide-21.png'},
+    {'name': 'resources/aud/BEPS Q04.m4a', 'path': 'resources/aud/BEPS Q04.m4a'},
+    {'name': 'resources/aud/BEPS Instructions.m4a', 'path': 'resources/aud/BEPS Instructions.m4a'},
+    {'name': 'resources/imgs/slides/slide-02.png', 'path': 'resources/imgs/slides/slide-02.png'},
+    {'name': 'resources/imgs/slides/slide-11.png', 'path': 'resources/imgs/slides/slide-11.png'},
+    {'name': 'resources/aud/PAMS Q03.m4a', 'path': 'resources/aud/PAMS Q03.m4a'},
+    {'name': 'resources/aud/BEPS Q04a.m4a', 'path': 'resources/aud/BEPS Q04a.m4a'},
+    {'name': 'resources/seqs/conditions.csv', 'path': 'resources/seqs/conditions.csv'},
+    {'name': 'resources/aud/PAMS Q04.m4a', 'path': 'resources/aud/PAMS Q04.m4a'}
   ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
 
 
+var currentLoop;
 var frameDur;
 async function updateInfo() {
+  currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
   expInfo['expName'] = expName;
-  expInfo['psychopyVersion'] = '2021.2.3';
+  expInfo['psychopyVersion'] = '2022.2.4';
   expInfo['OS'] = window.navigator.platform;
+
+  psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["participant"]}_${expInfo["School"]}_${expName}_${expInfo["date"]}`);
 
   // store frame rate of monitor if we can measure it successfully
   expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
@@ -271,6 +282,7 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "begin"
   beginClock = new util.Clock();
+  // Run 'Begin Experiment' code from begin_code
   expVersion = "2022.09.26";
   AUD_DIR = "resources/aud";
   IMGS_DIR = "resources/imgs";
@@ -306,6 +318,7 @@ async function experimentInit() {
   previous_wrong = false;
   all_cimgs = {"slide-02": get_5umbrellas, "slide-03": get_pattern1, "slide-04": get_pattern2, "slide-05": get_symmetry, "slide-06": get_shapes, "slide-07": get_cookies, "slide-09": get_flowers, "slide-10": get_yes_no, "slide-11": get_red_apples1, "slide-12": get_red_apples2, "slide-13": get_9or6, "slide-14": get_20or12, "slide-15": get_5or8, "slide-16": get_21or17, "slide-17": get_num_pattern, "slide-18": get_green_apples, "slide-19": get_farm, "slide-20": get_cows, "slide-21": get_2plus2, "slide-22": get_sweets, "slide-23": get_3minus1};
   
+  // Run 'Begin Experiment' code from specs_BEPS
   function get_5umbrellas() {
       var names, sizes, xys, y0, y1;
       names = ["orange", "white", "yellow", "black", "red"];
@@ -364,6 +377,7 @@ async function experimentInit() {
       return make_boxes(names, xys, sizes);
   }
   
+  // Run 'Begin Experiment' code from specs_PAMS
   function get_flowers() {
       var names, sizes, xys, y0;
       names = ["flowers3", "flowers4", "flowers5", "flowers1"];
@@ -504,6 +518,7 @@ async function experimentInit() {
   
   // Initialize components for Routine "beps_intro"
   beps_introClock = new util.Clock();
+  // Run 'Begin Experiment' code from b_intro_code
   NEXT_R_POS = [0.4, 0.285];
   NEXT_R_SIZE = [0.165, 0.075];
   NEXT_R = make_rect("next", NEXT_R_POS, NEXT_R_SIZE, CLICK_BOX_OPACITY);
@@ -517,12 +532,14 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
   
   // Initialize components for Routine "beps_trial"
   beps_trialClock = new util.Clock();
+  // Run 'Begin Experiment' code from trial_anim
   run_anim = false;
   aimgs = null;
   starts = null;
@@ -545,12 +562,14 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -2.0 
   });
   
   // Initialize components for Routine "pams_intro"
   pams_introClock = new util.Clock();
+  // Run 'Begin Experiment' code from p_intro_code
   NEXT_R = make_rect("next", NEXT_R_POS, NEXT_R_SIZE, CLICK_BOX_OPACITY);
   
   p_intro_text = new visual.TextStim({
@@ -560,12 +579,14 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
   
   // Initialize components for Routine "pams_trial"
   pams_trialClock = new util.Clock();
+  // Run 'Begin Experiment' code from pams_anim
   run_anim = false;
   aimgs = null;
   starts = null;
@@ -606,6 +627,7 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -2.0 
   });
@@ -626,7 +648,7 @@ function beginRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'begin'-------
+    //--- Prepare to start Routine 'begin' ---
     t = 0;
     beginClock.reset(); // clock
     frameN = -1;
@@ -646,7 +668,7 @@ function beginRoutineBegin(snapshot) {
 
 function beginRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'begin'-------
+    //--- Loop for each frame of Routine 'begin' ---
     // get current time
     t = beginClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
@@ -678,9 +700,9 @@ function beginRoutineEachFrame() {
 }
 
 
-function beginRoutineEnd() {
+function beginRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'begin'-------
+    //--- Ending Routine 'begin' ---
     beginComponents.forEach( function(thisComponent) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
@@ -689,8 +711,12 @@ function beginRoutineEnd() {
     // the Routine "begin" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
@@ -703,12 +729,13 @@ function beps_introRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'beps_intro'-------
+    //--- Prepare to start Routine 'beps_intro' ---
     t = 0;
     beps_introClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from b_intro_code
     slide = make_slide(`beps-intro`);
     slide.autoDraw = true;
     NEXT_R.autoDraw = true;
@@ -736,11 +763,12 @@ function beps_introRoutineBegin(snapshot) {
 
 function beps_introRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'beps_intro'-------
+    //--- Loop for each frame of Routine 'beps_intro' ---
     // get current time
     t = beps_introClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from b_intro_code
     MOUSE_L = MOUSE.getPressed()[0];
     if ((MOUSE_L_prev !== MOUSE_L)) {
         MOUSE_L_prev = MOUSE_L;
@@ -789,14 +817,15 @@ function beps_introRoutineEachFrame() {
 }
 
 
-function beps_introRoutineEnd() {
+function beps_introRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'beps_intro'-------
+    //--- Ending Routine 'beps_intro' ---
     beps_introComponents.forEach( function(thisComponent) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     });
+    // Run 'End Routine' code from b_intro_code
     slide.autoDraw = false;
     NEXT_R.autoDraw = false;
     COVER.autoDraw = false;
@@ -807,13 +836,16 @@ function beps_introRoutineEnd() {
     // the Routine "beps_intro" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
 var trials;
-var currentLoop;
 function trialsLoopBegin(trialsLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -831,13 +863,13 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
     
     // Schedule all the trials in the trialList:
     trials.forEach(function() {
-      const snapshot = trials.getSnapshot();
+      snapshot = trials.getSnapshot();
     
       trialsLoopScheduler.add(importConditions(snapshot));
       trialsLoopScheduler.add(beps_trialRoutineBegin(snapshot));
       trialsLoopScheduler.add(beps_trialRoutineEachFrame());
-      trialsLoopScheduler.add(beps_trialRoutineEnd());
-      trialsLoopScheduler.add(endLoopIteration(trialsLoopScheduler, snapshot));
+      trialsLoopScheduler.add(beps_trialRoutineEnd(snapshot));
+      trialsLoopScheduler.add(trialsLoopEndIteration(trialsLoopScheduler, snapshot));
     });
     
     return Scheduler.Event.NEXT;
@@ -846,9 +878,34 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
 
 
 async function trialsLoopEnd() {
+  // terminate loop
   psychoJS.experiment.removeLoop(trials);
-
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
+}
+
+
+function trialsLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
 }
 
 
@@ -870,13 +927,13 @@ function pams_trialsLoopBegin(pams_trialsLoopScheduler, snapshot) {
     
     // Schedule all the trials in the trialList:
     pams_trials.forEach(function() {
-      const snapshot = pams_trials.getSnapshot();
+      snapshot = pams_trials.getSnapshot();
     
       pams_trialsLoopScheduler.add(importConditions(snapshot));
       pams_trialsLoopScheduler.add(pams_trialRoutineBegin(snapshot));
       pams_trialsLoopScheduler.add(pams_trialRoutineEachFrame());
-      pams_trialsLoopScheduler.add(pams_trialRoutineEnd());
-      pams_trialsLoopScheduler.add(endLoopIteration(pams_trialsLoopScheduler, snapshot));
+      pams_trialsLoopScheduler.add(pams_trialRoutineEnd(snapshot));
+      pams_trialsLoopScheduler.add(pams_trialsLoopEndIteration(pams_trialsLoopScheduler, snapshot));
     });
     
     return Scheduler.Event.NEXT;
@@ -885,9 +942,34 @@ function pams_trialsLoopBegin(pams_trialsLoopScheduler, snapshot) {
 
 
 async function pams_trialsLoopEnd() {
+  // terminate loop
   psychoJS.experiment.removeLoop(pams_trials);
-
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
+}
+
+
+function pams_trialsLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
 }
 
 
@@ -906,12 +988,13 @@ function beps_trialRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'beps_trial'-------
+    //--- Prepare to start Routine 'beps_trial' ---
     t = 0;
     beps_trialClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from trial_code
     psychoJS.experiment.addData("expVersion", expVersion);
     cimgs = [];
     cimg_names = [];
@@ -963,6 +1046,7 @@ function beps_trialRoutineBegin(snapshot) {
         }
     }
     
+    // Run 'Begin Routine' code from trial_anim
     var _pj;
     function _pj_snippets(container) {
         function in_es6(left, right) {
@@ -1002,11 +1086,12 @@ function beps_trialRoutineBegin(snapshot) {
 
 function beps_trialRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'beps_trial'-------
+    //--- Loop for each frame of Routine 'beps_trial' ---
     // get current time
     t = beps_trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from trial_code
     var _pj;
     function _pj_snippets(container) {
         function in_es6(left, right) {
@@ -1104,6 +1189,7 @@ function beps_trialRoutineEachFrame() {
     ;
     }
     
+    // Run 'Each Frame' code from trial_anim
     if (run_anim) {
         for (var i, _pj_c = 0, _pj_a = util.range(aimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
             i = _pj_a[_pj_c];
@@ -1154,14 +1240,15 @@ function beps_trialRoutineEachFrame() {
 
 
 var is_correct;
-function beps_trialRoutineEnd() {
+function beps_trialRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'beps_trial'-------
+    //--- Ending Routine 'beps_trial' ---
     beps_trialComponents.forEach( function(thisComponent) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     });
+    // Run 'End Routine' code from trial_code
     REPLAY.autoDraw = false;
     NEXT.autoDraw = false;
     if (USE_AUDIO) {
@@ -1204,6 +1291,7 @@ function beps_trialRoutineEnd() {
         console.log(`previous_wrong = ${previous_wrong}`);
     }
     
+    // Run 'End Routine' code from trial_anim
     if (run_anim) {
         run_anim = false;
     }
@@ -1211,8 +1299,12 @@ function beps_trialRoutineEnd() {
     // the Routine "beps_trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
@@ -1221,12 +1313,13 @@ function pams_introRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'pams_intro'-------
+    //--- Prepare to start Routine 'pams_intro' ---
     t = 0;
     pams_introClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from p_intro_code
     slide = make_slide(`pams-intro`);
     slide.autoDraw = true;
     NEXT_R.autoDraw = true;
@@ -1246,11 +1339,12 @@ function pams_introRoutineBegin(snapshot) {
 
 function pams_introRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'pams_intro'-------
+    //--- Loop for each frame of Routine 'pams_intro' ---
     // get current time
     t = pams_introClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from p_intro_code
     MOUSE_L = MOUSE.getPressed()[0];
     if ((MOUSE_L_prev !== MOUSE_L)) {
         MOUSE_L_prev = MOUSE_L;
@@ -1296,22 +1390,27 @@ function pams_introRoutineEachFrame() {
 }
 
 
-function pams_introRoutineEnd() {
+function pams_introRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'pams_intro'-------
+    //--- Ending Routine 'pams_intro' ---
     pams_introComponents.forEach( function(thisComponent) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     });
+    // Run 'End Routine' code from p_intro_code
     slide.autoDraw = false;
     NEXT_R.autoDraw = false;
     
     // the Routine "pams_intro" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
@@ -1320,12 +1419,13 @@ function pams_trialRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'pams_trial'-------
+    //--- Prepare to start Routine 'pams_trial' ---
     t = 0;
     pams_trialClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from pams_code
     psychoJS.experiment.addData("expVersion", expVersion);
     cimgs = [];
     cimg_names = [];
@@ -1377,6 +1477,7 @@ function pams_trialRoutineBegin(snapshot) {
         }
     }
     
+    // Run 'Begin Routine' code from pams_anim
     var _pj;
     function _pj_snippets(container) {
         function in_es6(left, right) {
@@ -1416,11 +1517,12 @@ function pams_trialRoutineBegin(snapshot) {
 
 function pams_trialRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'pams_trial'-------
+    //--- Loop for each frame of Routine 'pams_trial' ---
     // get current time
     t = pams_trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from pams_code
     var _pj;
     function _pj_snippets(container) {
         function in_es6(left, right) {
@@ -1518,6 +1620,7 @@ function pams_trialRoutineEachFrame() {
     ;
     }
     
+    // Run 'Each Frame' code from pams_anim
     if (run_anim) {
         for (var i, _pj_c = 0, _pj_a = util.range(aimgs.length), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
             i = _pj_a[_pj_c];
@@ -1567,14 +1670,15 @@ function pams_trialRoutineEachFrame() {
 }
 
 
-function pams_trialRoutineEnd() {
+function pams_trialRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'pams_trial'-------
+    //--- Ending Routine 'pams_trial' ---
     pams_trialComponents.forEach( function(thisComponent) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     });
+    // Run 'End Routine' code from pams_code
     REPLAY.autoDraw = false;
     NEXT.autoDraw = false;
     if (USE_AUDIO) {
@@ -1617,6 +1721,7 @@ function pams_trialRoutineEnd() {
         console.log(`previous_wrong = ${previous_wrong}`);
     }
     
+    // Run 'End Routine' code from pams_anim
     if (run_anim) {
         run_anim = false;
     }
@@ -1624,31 +1729,12 @@ function pams_trialRoutineEnd() {
     // the Routine "pams_trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
-    return Scheduler.Event.NEXT;
-  };
-}
-
-
-function endLoopIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      } else {
-        const thisTrial = snapshot.getCurrentTrial();
-        if (typeof thisTrial === 'undefined' || !('isTrials' in thisTrial) || thisTrial.isTrials) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-      }
-    return Scheduler.Event.NEXT;
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
     }
-  };
+    return Scheduler.Event.NEXT;
+  }
 }
 
 
